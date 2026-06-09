@@ -19,24 +19,53 @@ Fecha: 2026-06-04
 Fase: reconocimiento pasivo completado (4 sistemas perfilados). SGSI MINSAL incorporado.
 Próximo: escaneo de vulnerabilidades activo (requiere autorización del HSC)
 
-## Artefactos
+## Estructura del repositorio
 
-| Directorio | Descripción |
-|------------|-------------|
-| `contratos/` | Contratos de seguridad e interoperabilidad (fuente: hd-hsc-os) |
-| `auditorias/` | Auditorías de seguridad, forenses, cumplimiento y hacking ético |
-| `auditorias/minsal-seguridad-info/` | SGSI completo del MINSAL: 63 PDFs fuente + 63 transcripciones markdown (v3) |
-| `evals/` | Checklists y evaluaciones de seguridad (SGSI, interoperabilidad) |
-| `puertos/` | Puertos de seguridad e interoperabilidad (IAM-agnostic) |
-| `certificacion/` | Evaluación virtual de sellos CENS |
-| `experiencia/` | Seguridad en UX clínica |
-| `sistemas/` | Perfiles forenses de los sistemas objetivo |
-| `vectores/` | Vectores de ataque por sistema |
-| `escenarios/` | Escenarios de ataque compuestos |
-| `remediacion/` | Planes de acción y métricas |
-| `handoff/` | Handoffs de sesión |
+```
+he-hsc/
+├── CLAUDE.md                          # Este documento (SSOT)
+├── contratos/                         # Contratos de seguridad e interoperabilidad
+│   ├── contrato-seguridad-informacion-salud.md
+│   └── contrato-interoperabilidad-salud.md
+├── auditorias/                        # Auditorías de seguridad, forenses, cumplimiento y hacking ético
+│   ├── auditoria-seguridad-informacion-salud.md
+│   ├── auditoria-seguridad-red-ssnuble-hsc-2026-05-31.md
+│   ├── auditoria-forense-sistemas-ssnuble-hsc-2026-05-31.md
+│   ├── auditoria-normativa-interoperabilidad.md
+│   ├── auditoria-cumplimiento-2026-05-29.md
+│   ├── auditoria-cumplimiento-2026-05-29-cierre.md
+│   ├── hacking-etico-sistemas-ssnuble-hsc-2026-05-31.md
+│   ├── informe-tecnico-ciberseguridad-salud-digital-2026-05-31.md
+│   ├── handoff-ola-b1-seguridad-clinica.md
+│   └── minsal-seguridad-info/        # SGSI MINSAL: 63 PDFs fuente + 63 transcripciones markdown (v3)
+├── evals/                             # Checklists y evaluaciones de seguridad (SGSI, interoperabilidad)
+│   ├── seguridad-informacion-salud.md
+│   └── cumplimiento-normativo-interoperabilidad.md
+├── puertos/                           # Puertos de seguridad e interoperabilidad (IAM-agnostic)
+│   ├── seguridad-informacion-salud.md
+│   └── interoperabilidad-salud.md
+├── certificacion/                     # Evaluación virtual de sellos CENS
+│   ├── cens-certificacion-virtual.md
+│   ├── auditoria-cens-certificacion-virtual-2026-05-30.md
+│   └── handoff-cens-certificacion-2026-05-30.md
+├── experiencia/                       # Seguridad en UX clínica
+│   └── sistema-visual-seguridad.md
+├── sistemas/                          # Perfiles forenses de los sistemas objetivo
+│   └── perfiles-forenses.md
+├── vectores/                          # Vectores de ataque por sistema
+│   ├── sgh-vectores.md
+│   ├── dau-vectores.md
+│   ├── lis-vectores.md
+│   └── esb-vectores.md
+├── escenarios/                        # Escenarios de ataque compuestos
+│   └── escenarios-compuestos.md
+├── remediacion/                       # Planes de acción y métricas
+│   └── plan-remediacion.md
+└── handoff/                           # Handoffs de sesión
+    └── handoff-2026-05-31.md
+```
 
-### SGSI MINSAL (`auditorias/minsal-seguridad-info/`)
+## SGSI MINSAL (`auditorias/minsal-seguridad-info/`)
 
 Corpus normativo completo del Sistema de Gestión de Seguridad de la Información del
 Ministerio de Salud de Chile, obtenido de `minsal.cl/seguridad_de_la_informacion/`
@@ -70,6 +99,14 @@ Marco normativo referenciado en los documentos:
 - ESB Salud En Red — puente de interoperabilidad nacional
 - MINSAL — `minsal.cl/seguridad_de_la_informacion/` (SGSI institucional)
 - Ley 21.663, Ley 21.719, ISO 27001, NIST CSF 2.0
+
+## Relación con otros repositorios
+
+| Repo | Relación |
+|------|----------|
+| `hd-hsc-os` | Sistema greenfield — he-hsc audita el legacy y alimenta el diseño de seguridad de hd-hsc-os |
+| `hsc-agent-cli` | Sonda forense — he-hsc usa el CLI como lente para reconstruir los sistemas objetivo |
+| `deep-opm-pro` | Proyecto padre — he-hsc es un carril de ciberseguridad independiente |
 
 ## Reglas de enfrentamiento
 
