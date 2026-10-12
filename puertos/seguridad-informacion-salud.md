@@ -1,6 +1,14 @@
 # Spec puerto: seguridad de información en salud
 
-Estado: borrador controlado
+> **Referencia histórica de diseño · corte mayo de 2026.** Este artefacto
+> corresponde a `hd-hsc-os`, cuyo retiro técnico fue autorizado el 2026-10-11.
+> Sus paths internos se resuelven en el archivo privado indicado en el
+> [README](../README.md). Se conserva para trazabilidad de evidencia y criterios;
+> no gobierna `hdapp` ni acredita normativa vigente, conformidad o controles
+> implementados. Dominio y habilitación pertenecen a `hd-dt`; la implementación
+> actual se gobierna y comprueba en `hdapp`.
+
+Estado: borrador histórico de puerto · no implementado por esta referencia
 
 ## Propósito
 

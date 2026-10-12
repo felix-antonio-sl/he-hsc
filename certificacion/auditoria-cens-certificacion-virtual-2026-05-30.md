@@ -1,5 +1,13 @@
 # Auditoría de la Evaluación Virtual CENS
 
+> **Estado editorial:** Este documento auditó la evaluación CENS original y encontró 17 hallazgos
+> (4 críticos, 6 mayores, 7 menores). Todos los hallazgos fueron **corregidos** en la versión
+> remediada de `cens-certificacion-virtual.md` (ver su §9). Este documento se conserva como
+> registro de la auditoría y metodología de verificación, pero sus conclusiones específicas
+> sobre errores ya no son operativas — la evaluación principal refleja las correcciones.
+> Esas correcciones pertenecen al documento del corte, no acreditan controles
+> implementados, certificación otorgada ni estado de la aplicación actual.
+
 Fecha: 2026-05-30
 Objeto auditado: `cens-certificacion-virtual.md` (eval) + `handoff-cens-certificacion-2026-05-30.md` (handoff)
 Método: triple verificación independiente — (1) reproducción aritmética del scoring, (2) verificación factual contra el código del repo, (3) verificación de la topología del Apéndice A contra `hsc-agent-cli` real, (4) verificación normativa contra fuentes oficiales (CENS, BCN/LeyChile, MINSAL, ISO, ANCI).

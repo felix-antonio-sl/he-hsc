@@ -1,5 +1,10 @@
 # Informe Técnico — Brecha de Ciberseguridad y Compliance · Salud Digital Chile
 
+> **Nota de contexto:** Este informe es un superconjunto que cubre tanto la ciberseguridad de `hd-hsc-os`
+> como la certificación CENS. Los paths de código como `interfaces/web/src/`, `adaptadores/`,
+> `migrations/` refieren al repo hd-hsc-os. Almacena hallazgos de exposición del corte 2026-05-31 (pipeline CI/CD)
+> y brechas de certificación que alimentan las recomendaciones de este carril.
+
 Para: equipo de desarrollo (backend, frontend, datos) + Dirección Técnica HODOM-HSC
 Fecha: 2026-05-31
 Alcance: **ciberseguridad y compliance completos** de hd-hsc-os como sistema de salud digital de un hospital público chileno (servicio esencial, Ley 21.663). Superconjunto del informe CENS (`informe-tecnico-cierre-brechas-cens-2026-05-31.md`), que cubre solo los sellos de calidad.

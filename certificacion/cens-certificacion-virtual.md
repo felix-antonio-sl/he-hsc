@@ -1,5 +1,10 @@
 # Evaluación Virtual CENS — hd-hsc-os
 
+> **Nota de contexto:** Esta evaluación analiza el sistema greenfield `hd-hsc-os`, no los sistemas
+> legacy auditados por he-hsc. Los paths de código, migraciones, ADRs, componentes y specs referenciados
+> pertenecen al repo hd-hsc-os. Se almacena aquí porque los hallazgos de seguridad de he-hsc alimentan
+> directamente la estrategia de certificación CENS de hd-hsc-os.
+
 Estado: autoevaluación pre-sello
 Fecha: 2026-05-29 · **Remediada 2026-05-30** (ver §9 y `auditoria-cens-certificacion-virtual-2026-05-30.md`)
 Alcance: 3 sellos de calidad de software de CENS + B-PRACSIS (madurez institucional) + Asesoría de Interoperabilidad

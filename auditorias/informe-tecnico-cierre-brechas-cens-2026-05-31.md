@@ -1,5 +1,12 @@
 # Informe Técnico — Cierre de brechas de certificación CENS
 
+> **Nota de contexto:** Subconjunto CENS del informe integral de ciberseguridad.
+> Para el panorama completo de ciberseguridad y compliance, leer primero
+> `informe-tecnico-ciberseguridad-salud-digital-2026-05-31.md` (superconjunto).
+> Este documento cubre exclusivamente los sellos CENS; el superconjunto cubre ademas
+> exposicion de PII descrita en el corte 2026-05-31, deuda de implementacion y ausencia de gobernanza.
+> Los paths de codigo como `adaptadores/`, `migrations/`, `interfaces/` refieren al repo hd-hsc-os.
+
 Para: equipo de desarrollo (backend, frontend, datos)
 Fecha: 2026-05-31
 Origen: traducción a ingeniería del veredicto de `cens-certificacion-virtual.md` (remediado) y `auditoria-cens-certificacion-virtual-2026-05-30.md`

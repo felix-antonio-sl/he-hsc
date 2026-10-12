@@ -1,5 +1,11 @@
 # Handoff — Ola B-1 (seguridad clínica cableada en UI)
 
+> **Nota editorial:** Este documento NO pertenece a la misión ofensiva de he-hsc. Es un handoff de
+> desarrollo del backend de `hd-hsc-os` (sprint Ola B-1, carril steipete). Sus paths de código,
+> commits (`307e13d`, `ab0fe61`), referencias a `hd-opm` y convenciones de agentes son del
+> ecosistema hd-hsc-os. Se conserva aquí únicamente para trazabilidad histórica de las decisiones
+> que afectan la seguridad clínica — no como artefacto operativo de he-hsc.
+
 **Carril:** steipete (backend). **Fecha:** 2026-05-30.
 **Branch:** `worktree-steipete+ola-b1-seguridad-clinica` (nace de `origin/master` ab0fe61).
 

@@ -1,4 +1,13 @@
-# Sistemas Objetivo — Perfiles Forenses
+# Sistemas Objetivo — Perfiles Forenses (Resumen Ejecutivo)
+
+**Corte histórico: 2026-05-31.** Este resumen reproduce conclusiones de la
+auditoría pasiva de código de esa fecha. No revalida endpoints, topología,
+explotabilidad ni ausencia de controles en los sistemas actuales. Las pruebas
+activas permanecen `NOT_RUN`; la similitud de código no prueba una vulnerabilidad.
+
+> **Documento completo:** `auditorias/auditoria-forense-sistemas-ssnuble-hsc-2026-05-31.md`
+> **Análisis ofensivo con vectores detallados:** `auditorias/hacking-etico-sistemas-ssnuble-hsc-2026-05-31.md`
+> **Vectores por sistema:** `vectores/sgh-vectores.md`, `vectores/dau-vectores.md`, `vectores/lis-vectores.md`, `vectores/esb-vectores.md`
 
 Reconstrucción desde código del `hsc-agent-cli`. Cada sistema fue perfilado mediante
 ingeniería inversa pasiva de sus endpoints, modelos de datos, mecanismos de autenticación,
@@ -13,35 +22,31 @@ y patrones de respuesta HTML.
 | LIS | :8084 | `/WEB_SANCARLOS/` | PHP legacy | PHPSESSID (form login) | Alta — resultados de laboratorio, sin LOINC/SNOMED |
 | ESB | :8201,8095-8099 | `esb.saludenred.cl` | HTTPS (TLS roto) | Bridge DAU+SGH→Token | Crítica — historial clínico nacional, epicrisis |
 
-## Detalle forense completo
+## Topología
 
-Referencia cruzada: `hd-hsc-os/docs/04-arquitectura/auditoria-forense-sistemas-ssnuble-hsc-2026-05-31.md`
+```
+                    Internet
+                       │
+              ┌────────┴────────┐
+              │  esb.saludenred.cl  :8201 :8095-8099 (HTTPS, TLS roto)
+              └────────┬────────┘
+                       │
+    ┌──────────────────┼──────────────────┐
+    │       Proxy interno 100.77.30.26     │
+    │  :8080 DAU  :8084 LIS  :8085 SGH    │
+    │  (todos HTTP plano)                  │
+    └──────────────────────────────────────┘
+```
 
-### SGH — 14 endpoints, 7 hospitales, 1 instancia
+## Hallazgos transversales clave
 
-- `obt_paciente.php` — búsqueda por RUT sin rate limiting → enumeración de pacientes
-- `cambiar_hospital.php` — cambio de hospital sin control de acceso → pivoteo cross-hospital
-- `ver_pdf.php` — documentos sin verificación de identidad → acceso por ID secuencial
-- `listado_datos_camas_pacientes.php` — censo completo en una request → exfiltración masiva
-- `cargar_detalle_evolucion.php` — JSON con 8 campos clínicos → acceso a evoluciones por ID
+1. **HTTP plano en toda la capa interna** — credenciales y datos clínicos sin cifrar
+2. **Tres sesiones PHPSESSID independientes** sin SSO ni RBAC
+3. **Proxy único como SPOF** y concentrador de tráfico
+4. **Sin auditoría de accesos** en ningún sistema
+5. **Multi-tenancy por variable de sesión** sin segregación real de base de datos
+6. **TLS deshabilitado para ESB** (`InsecureSkipVerify: true`)
+7. **Cero interoperabilidad estándar** — sin FHIR, sin HL7, sin LOINC, sin SNOMED
 
-### DAU — 16 endpoints, flujo de urgencia completo
-
-- `listadoPacientesBox.php` — board sin RUTs pero con nombres, edades, motivos, categorías ESI
-- `triageprueba/listadoTriage.php` — signos vitales + alergias + antecedentes + medicación crónica
-- `atencion/index.php` — hidden fields con RUT y codPacie (identidad frágil, se pierde al cerrar)
-- `obtener_cie.php` — solo GET (POST = vacío) → falso negativo silencioso
-- `obtener_lista_recetas.php` — solo POST (GET = vacío) → mismo patrón
-
-### LIS — 3 endpoints, sin trazabilidad
-
-- `resultadoseleccion.php` — resultados por RUT sin DV → colisión de identidad
-- `detalleexamenes.php` — PDFs por ID secuencial → exfiltración masiva
-- Sin binding a episodio — cualquier sesión ve resultados de cualquier RUT
-
-### ESB — 5 puertos, TLS roto
-
-- `:8201` TokenSesion en query string → logueable
-- `:8099` XML epicrisis SGH dentro de JSON → inyectable vía MITM
-- Bridge DAU+SGH → AccessToken en HTML sobre HTTP → capturable en red
-- Sin scope por paciente → token autoriza acceso a toda la red nacional
+Véase la auditoría forense completa para el detalle de endpoints, modelos de datos,
+hallazgos de seguridad por sistema e implicancias para hd-hsc-os.

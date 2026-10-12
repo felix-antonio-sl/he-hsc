@@ -1,5 +1,8 @@
 # Auditoría de cumplimiento — carril frontend · cierre 2026-05-29
 
+> **Nota de contexto:** Esta auditoría revisa el frontend de `hd-hsc-os`, no los sistemas legacy.
+> Los paths internos como `docs/`, `interfaces/web/src/` refieren al repo hd-hsc-os.
+
 Sucede a: `auditoria-cumplimiento-2026-05-29.md` (matinal)
 Commit cabeza: `8da0fa6`
 Suite: 499/499 web tests verdes

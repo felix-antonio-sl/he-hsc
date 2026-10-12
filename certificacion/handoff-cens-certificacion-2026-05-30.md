@@ -1,5 +1,9 @@
 # Handoff — Evaluación Virtual CENS para hd-hsc-os
 
+> **Nota de contexto:** Este handoff documenta el estado de certificación CENS del sistema greenfield
+> `hd-hsc-os`, no de los sistemas legacy auditados por he-hsc. Los paths como `docs/05-especificaciones/`
+> y referencias a código refieren al repo hd-hsc-os.
+
 Fecha: 2026-05-30
 Origen: investigación de cuerpo normativo completo + sondeo de la red del HSC vía `hsc-agent-cli`
 Alcance: autoevaluación pre-sello contra los 3 sellos de software de CENS + B-PRACSIS (madurez institucional) + Asesoría de Interoperabilidad. (CENS ofrece 6 certificaciones en total; aquí se cubren estas 5.)

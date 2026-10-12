@@ -1,7 +1,11 @@
 # Auditoría de seguridad de información en salud
 
+> **Nota de contexto:** Esta auditoría revisa el repo `hd-hsc-os` (sistema greenfield), no los sistemas legacy.
+> Los paths internos como `02-datos/`, `05-especificaciones/` refieren al repo hd-hsc-os, no a este repo.
+> Se almacena aquí porque he-hsc alimenta el diseño de seguridad de hd-hsc-os con estos hallazgos.
+
 Estado: borrador controlado
-Tipo: auditoría transversal inicial
+Tipo: auditoría transversal inicial (hd-hsc-os)
 Fecha: 2026-05-26
 
 ## Propósito

@@ -15,7 +15,7 @@ Mantener el corpus de seguridad y evaluación ofensiva de HSC como evidencia res
 
 - Ancla cada hallazgo a ruta y línea, comando seguro o artefacto observable.
 - Separa hecho, inferencia, severidad, impacto clínico-operacional y recomendación.
-- Verifica rutas citadas contra `../hd-hsc-os` o `../hsc-agent-cli` cuando esos repositorios sean la fuente.
+- Verifica los paths de código contra su propietario: `../hdapp` para el producto seleccionado, `../hsc-agent-cli` para el adaptador factual y el archivo privado indicado en `README.md` para `hd-hsc-os`. No transfieras los contratos históricos a la implementación nueva por similitud; `he-hsc` custodia evidencia/recomendaciones y `hd-dt` conserva decisiones de dominio y habilitación.
 - No eleves una coincidencia de texto a vulnerabilidad explotable ni una mitigación propuesta a control implementado.
 
 ## Edición y cierre

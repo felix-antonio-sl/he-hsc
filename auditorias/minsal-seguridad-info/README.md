@@ -1,5 +1,13 @@
 # MINSAL — Seguridad de la Información y Ciberseguridad
 
+> **Nota de contexto:** Corpus normativo de referencia del SGSI institucional del MINSAL. No es
+> produccion de he-hsc: es la fuente oficial contra la cual se auditan los controles de seguridad.
+> Los 63 PDFs originales se preservan junto a sus transcripciones markdown.
+> **Los PDFs preservan copias de las fuentes publicadas; los markdowns son transcripciones consultables.**
+> El corte de descarga no demuestra vigencia jurídica actual ni cumplimiento de HSC.
+> Si el corpus se actualiza desde el sitio MINSAL, ambos formatos deben regenerarse juntos.
+> No se modifica el contenido normativo; solo se extrae y referencia.
+
 63 documentos vigentes descargados desde el sitio vivo de [minsal.cl/seguridad_de_la_informacion](https://www.minsal.cl/seguridad_de_la_informacion/)
 el 2026-06-04. Extraídos vía Jina AI (el sitio bloquea requests automatizados con Cloudflare Bot Management).
 

@@ -1,6 +1,14 @@
 # Auditoría de cumplimiento — carril frontend (Steve-web-ux)
 
-Estado: instrumento de gobernanza del carril (vivo)
+> **ESTADO: SUPERSEDIDO.** Este documento ha sido reemplazado por
+> `auditoria-cumplimiento-2026-05-29-cierre.md`, que registra el cierre completo de
+> los Top-10 gaps detectados en esta auditoría matinal. **No usar como fuente de verdad
+> del estado actual del frontend.** Se conserva únicamente como registro histórico.
+>
+> **Nota de contexto:** Esta auditoría revisa el frontend de `hd-hsc-os`, no los sistemas legacy.
+> Los paths internos como `docs/05-especificaciones/`, `interfaces/web/src/` refieren al repo hd-hsc-os.
+
+Estado: SUPERSEDIDO — conservado como registro histórico
 Fecha: 2026-05-29
 Commit cabeza: `d0b1c00` (origin/master sincronizado)
 Alcance: superficies UI · componentes especificados · slices con criterios UI.
