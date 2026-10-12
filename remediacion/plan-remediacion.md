@@ -1,3 +1,11 @@
+> **Contexto histórico de archivo, 2026-10-12.** Este plan se conserva como
+> propuesta registrada en Git el 2026-05-31; el texto original no consigna una
+> fecha explícita de observación. “Esta semana”, “este mes”, “próximos 3 meses”,
+> “hoy”, la línea base y las metas pertenecen a aquel contexto histórico y no
+> son plazos, estado comprobado ni obligaciones actuales. El frente activo de
+> `he-hsc` está retirado. El cuerpo original se conserva a continuación, sin
+> revalidación de hallazgos, ratificación institucional ni ejecución de acciones.
+
 # Plan de Remediación — Sistemas HSC / SS Ñuble
 
 ## Prioridad 1 — Esta semana (costo cero o mínimo, alto impacto)
